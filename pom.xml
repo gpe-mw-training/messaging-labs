@@ -1,0 +1,85 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.fusesource.activemq.exercises</groupId>
+    <artifactId>activemq-exercises</artifactId>
+    <packaging>pom</packaging>
+    <version>0.1-SNAPSHOT</version>
+
+    <name>ActiveMQ Exercises</name>
+
+    <properties>
+        <activemq.version>5.9.0.redhat-610379</activemq.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-broker</artifactId>
+            <version>${activemq.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.2</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <modules>
+        <module>durable-chat</module>
+        <module>exclusive-consumer</module>
+        <module>failover</module>
+        <module>hierarchical-chat</module>
+        <!-- <module>message-broker</module> -->
+        <module>message-groups</module>
+        <module>prioritized-exclusive-consumer</module>
+        <module>request-reply</module>
+        <module>simple-queue</module>
+        <module>simple-topic</module>
+        <module>transacted-chat</module>
+        <module>multiple-consumer</module>
+        <module>virtual-destination</module>
+    </modules>
+
+    <repositories>
+        <repository>
+            <id>Fuse-releases</id>
+            <name>FuseSource Releases Maven Repository</name>
+            <url>https://repository.jboss.org/nexus/content/groups/fs-public</url>
+        </repository>
+        <repository>
+            <id>Fuse-public</id>
+            <name>FuseSource Public Maven Repository</name>
+            <url>http://repo.fusesource.com/maven2/</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>Fuse-releases</id>
+            <name>FuseSource Releases Maven Repository</name>
+            <url>https://repository.jboss.org/nexus/content/groups/fs-public</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>fusesource</id>
+            <name>FuseSource Public Maven Repository</name>
+            <url>http://repo.fusesource.com/maven2/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+</project>
