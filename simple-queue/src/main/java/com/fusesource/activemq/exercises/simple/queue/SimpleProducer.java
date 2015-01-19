@@ -22,9 +22,7 @@ public class SimpleProducer {
         Connection connection = null;
 
         try {
-
             // Initialize control variables from the command line
-
             MESSAGE_TIME_TO_LIVE_MILLISECONDS =
 				Long.parseLong(System.getProperty("TimeToLive", "0"));
             MESSAGE_DELAY_MILLISECONDS =
@@ -44,7 +42,7 @@ public class SimpleProducer {
 
             Session session = connection.createSession(NON_TRANSACTED, Session.AUTO_ACKNOWLEDGE);
             MessageProducer producer = session.createProducer(destination);
-            producer.setDeliveryMode(DeliveryMode.NON_PERSISTENT);
+            producer.setDeliveryMode(DeliveryMode.PERSISTENT);
 
             producer.setTimeToLive(MESSAGE_TIME_TO_LIVE_MILLISECONDS);
 
