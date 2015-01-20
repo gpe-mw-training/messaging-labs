@@ -10,15 +10,30 @@
 
     <camelContext xmlns="http://camel.apache.org/schema/blueprint">
         <route id="producer">
-            <from uri="timer://producer?period=5000"/>
-            <log message="This is a producer camel route"/>
-            <setBody>
-                <constant>Hello from the producer</constant>
-            </setBody>
+            <from uri="file://demo"/>
+            <log message="File has been polled from the directory demo"/>
+            <convertBodyTo type="String"/>
+            <!-- Enrich Camel Exchange -->
             <setHeader headerName="fileName">
-                <constant>myfile.txt</constant>
+                <simple>${file:name.ext}</simple>
             </setHeader>
-            <to uri="activemq:queue:demo"/>
+            <setHeader headerName="fileSize">
+                <simple>${file:size}</simple>
+            </setHeader>
+            <!-- Split the content -->
+            <split>
+                <tokenize token="\n"/>
+                <setHeader headerName="splitIndex">
+                    <simple>${property.CamelSplitIndex}</simple>
+                </setHeader>
+                <setHeader headerName="splitSize">
+                    <simple>${property.CamelSplitSize}</simple>
+                </setHeader>
+                <setHeader headerName="splitComplete">
+                    <simple>${property.CamelSplitComplete}</simple>
+                </setHeader>
+                <to uri="activemq:queue:demo"/>
+            </split>
         </route>
     </camelContext>
 

@@ -22,8 +22,10 @@ features:addurl mvn:com.fusesource.activemq.exercises/features/0.1-SNAPSHOT/xml/
 ````
 - Deploy the project
 
+cp the file located into this folder `features/src/main/resources/poolconfig.cfg` to the etc directory of JBoss-AMQ
+
 ````
 features:install config
-features:install camel-consumer
 features:install camel-producer
+features:install camel-consumer
 ````

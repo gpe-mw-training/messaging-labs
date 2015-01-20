@@ -5,12 +5,12 @@
 
     <ext:property-placeholder placeholder-prefix="$[" placeholder-suffix="]" />
 
-    <cm:property-placeholder persistent-id="org.apache.activemq.server-default" update-strategy="reload">
-        <cm:default-properties>
+    <cm:property-placeholder persistent-id="poolconfig" update-strategy="reload">
+<!--        <cm:default-properties>
             <cm:property name="broker-name" value="broker1"/>
             <cm:property name="activemq.user" value="admin"/>
             <cm:property name="activemq.password" value="admin"/>
-        </cm:default-properties>
+        </cm:default-properties>-->
     </cm:property-placeholder>
 
     <bean id="activemqConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">

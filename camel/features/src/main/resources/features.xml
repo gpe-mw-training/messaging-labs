@@ -9,6 +9,10 @@ http://karaf.apache.org/xmlns/features/v1.0.0 "
 
     <feature name="config" version="${pom.version}">
         <bundle>mvn:${pom.groupId}/config/${pom.version}</bundle>
+<!--        <config name="poolconfig">
+            activemq.user=admin
+            activemq.password=admin
+        </config>-->
     </feature>
 
     <feature name="camel-producer" version="${pom.version}">
