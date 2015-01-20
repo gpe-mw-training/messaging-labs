@@ -37,9 +37,11 @@ OR
 mvn:com.fusesource.activemq.exercises/features/0.1-SNAPSHOT/xml/features
 ````
 
-- Next, boot Karaf & Deploy the features
+- Next, boot Karaf, clean the previous installation & deploy the features
 
 ````
+./karaf clean or karaf.bat clean
+
 features:install all
 ````
 
