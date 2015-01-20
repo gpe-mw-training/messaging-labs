@@ -23,9 +23,9 @@
         <property name="connectionFactory" ref="activemqConnectionFactory"/>
     </bean>
 
-    <reference id="jtaTransactionManager"
+<!--    <reference id="jtaTransactionManager"
                interface="javax.transaction.TransactionManager"
-               availability="mandatory" />
+               availability="mandatory" />-->
 
     <!--
         Register the javax.jms.ConnectionFactory in the OSGi Service Registry
