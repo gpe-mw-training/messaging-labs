@@ -8,7 +8,7 @@
         <property name="connectionFactory" ref="pooledConnectionFactory"/>
     </bean>
 
-    <camelContext xmlns="http://camel.apache.org/schema/blueprint">
+    <camelContext id="consumer-ctx" xmlns="http://camel.apache.org/schema/blueprint">
         <route id="consumer">
             <from uri="activemq:queue:demo?concurrentConsumers=4"/>
             <log message="Thread used : ${threadName}"/>

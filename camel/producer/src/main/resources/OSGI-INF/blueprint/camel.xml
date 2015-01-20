@@ -8,7 +8,7 @@
         <property name="connectionFactory" ref="pooledConnectionFactory"/>
     </bean>
 
-    <camelContext xmlns="http://camel.apache.org/schema/blueprint">
+    <camelContext id="producer-ctx" xmlns="http://camel.apache.org/schema/blueprint">
 
         <route id="producer">
             <from uri="file://demo"/>
