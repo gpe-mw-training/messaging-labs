@@ -5,7 +5,7 @@
 http://karaf.apache.org/xmlns/features/v1.0.0 "
           name="redhat-gpe-jboss-fuse-amqcamel-training">
 
-    <repository>mvn:org.apache.activemq/activemq-karaf/${activemq-version}/xml/features</repository>
+    <repository>mvn:org.apache.activemq/activemq-karaf/${activemq.version}/xml/features</repository>
 
     <feature name="config" version="${pom.version}">
         <bundle>mvn:${pom.groupId}/config/${pom.version}</bundle>
@@ -16,7 +16,7 @@ http://karaf.apache.org/xmlns/features/v1.0.0 "
         <feature version="${activemq.version}">activemq-camel</feature>
         <feature version="${camel.version}">camel</feature>
         <feature version="${camel.version}">camel-jms</feature>
-        <bundle>mvn:${pom.groupId}/camel-exercise-cbr/${pom.version}</bundle>
+        <bundle>mvn:${pom.groupId}/producer/${pom.version}</bundle>
     </feature>
 
     <feature name="camel-consumer" version="${pom.version}">
@@ -24,6 +24,6 @@ http://karaf.apache.org/xmlns/features/v1.0.0 "
         <feature version="${activemq.version}">activemq-camel</feature>
         <feature version="${camel.version}">camel</feature>
         <feature version="${camel.version}">camel-jms</feature>
-        <bundle>mvn:${pom.groupId}/camel-exercise-exception/${pom.version}</bundle>
+        <bundle>mvn:${pom.groupId}/consumer/${pom.version}</bundle>
     </feature>
 </features>
