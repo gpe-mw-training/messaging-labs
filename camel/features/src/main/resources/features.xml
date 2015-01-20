@@ -10,15 +10,15 @@ http://karaf.apache.org/xmlns/features/v1.0.0 "
     </feature>
 
     <feature name="camel-producer">
-        <feature version="${pom.vesion}">config</feature>
+        <feature version="${pom.version}">config</feature>
         <feature version="${camel-version}">camel</feature>
         <feature version="${camel-version}">camel-jms</feature>
         <bundle>mvn:${pom.groupId}/camel-exercise-cbr/${pom.version}</bundle>
     </feature>
 
     <feature name="camel-consumer">
+        <feature version="${pom.version}">config</feature>
         <feature version="${camel-version}">camel</feature>
-        <feature version="${pom.vesion}">config</feature>
         <feature version="${camel-version}">camel-jms</feature>
         <bundle>mvn:${pom.groupId}/camel-exercise-exception/${pom.version}</bundle>
     </feature>
