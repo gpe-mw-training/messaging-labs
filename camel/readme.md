@@ -29,3 +29,9 @@ features:install config
 features:install camel-producer
 features:install camel-consumer
 ````
+
+OR
+
+````
+features:install all
+````
