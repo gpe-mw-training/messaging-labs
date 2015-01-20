@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.0.0 http://karaf.apache.org/xmlns/features/v1.0.0
+http://karaf.apache.org/xmlns/features/v1.0.0 "
+          name="redhat-gpe-jboss-fuse-amqcamel-training">
+
+    <feature name="config">
+        <bundle>mvn:${pom.groupId}/config/${pom.version}</bundle>
+    </feature>
+
+    <feature name="camel-producer">
+        <feature version="${pom.vesion}">config</feature>
+        <feature version="${camel-version}">camel</feature>
+        <feature version="${camel-version}">camel-jms</feature>
+        <bundle>mvn:${pom.groupId}/camel-exercise-cbr/${pom.version}</bundle>
+    </feature>
+
+    <feature name="camel-consumer">
+        <feature version="${camel-version}">camel</feature>
+        <feature version="${pom.vesion}">config</feature>
+        <feature version="${camel-version}">camel-jms</feature>
+        <bundle>mvn:${pom.groupId}/camel-exercise-exception/${pom.version}</bundle>
+    </feature>
+</features>

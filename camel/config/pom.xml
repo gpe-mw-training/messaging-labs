@@ -2,14 +2,37 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>camel</artifactId>
         <groupId>com.fusesource.activemq.exercises</groupId>
         <version>0.1-SNAPSHOT</version>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
 
+    <name>JBoss A-MQ Exercise :: Camel :: Config</name>
     <artifactId>config</artifactId>
+    <packaging>bundle</packaging>
 
+    <build>
+        <plugins>
+            <!-- build the OSGi bundle -->
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Export-Package>
+                            *
+                        </Export-Package>
+                        <!-- we must set the version for org.slf4j explicitly, to match that used in JBoss Fuse -->
+                        <Import-Package>
+                            *
+                        </Import-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
