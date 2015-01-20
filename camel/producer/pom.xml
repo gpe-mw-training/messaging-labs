@@ -52,10 +52,6 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Export-Package>
-                            *
-                        </Export-Package>
-                        <!-- we must set the version for org.slf4j explicitly, to match that used in JBoss Fuse -->
                         <Import-Package>
                             javax.jms;version="[1.1,2)",
                             org.apache.activemq.camel.component,
