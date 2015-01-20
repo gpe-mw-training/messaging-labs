@@ -57,6 +57,11 @@
                                     <type>xml</type>
                                     <classifier>features</classifier>
                                 </artifact>
+                                <artifact>
+                                    <file>target/classes/poolconfig.cfg</file>
+                                    <type>cfg</type>
+                                    <classifier>features</classifier>
+                                </artifact>
                             </artifacts>
                         </configuration>
                     </execution>

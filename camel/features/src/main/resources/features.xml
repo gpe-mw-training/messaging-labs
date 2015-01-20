@@ -13,6 +13,7 @@ http://karaf.apache.org/xmlns/features/v1.0.0 "
             activemq.user=admin
             activemq.password=admin
         </config>-->
+        <configfile finalname="/etc/poolconfig.cfg" override="false">mvn:com.fusesource.activemq.exercises/features/0.1-SNAPSHOT/cfg/features</configfile>
     </feature>
 
     <feature name="camel-producer" version="${pom.version}">
