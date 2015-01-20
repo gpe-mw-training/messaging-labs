@@ -25,15 +25,15 @@
     </modules>
 
     <dependencyManagement>
-    <dependencies>
-        <dependency>
-            <groupId>org.jboss.fuse.bom</groupId>
-            <artifactId>jboss-fuse-parent</artifactId>
-            <version>${jboss.fuse.bom.version}</version>
-            <type>pom</type>
-            <scope>import</scope>
-        </dependency>
-    </dependencies>
+        <dependencies>
+            <dependency>
+                <groupId>org.jboss.fuse.bom</groupId>
+                <artifactId>jboss-fuse-parent</artifactId>
+                <version>${jboss.fuse.bom.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
     </dependencyManagement>
 
     <repositories>

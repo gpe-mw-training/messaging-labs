@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
 
     <reference id="pooledConnectionFactory" interface="javax.jms.ConnectionFactory"
@@ -7,5 +8,11 @@
         <property name="connectionFactory" ref="pooledConnectionFactory"/>
     </bean>
 
+    <camelContext xmlns="http://camel.apache.org/schema/blueprint">
+        <route id="consumer">
+            <from uri="timer://consumer"/>
+            <log message="This is a consumer camel route"/>
+        </route>
+    </camelContext>
 
 </blueprint>
