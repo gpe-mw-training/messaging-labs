@@ -10,7 +10,8 @@
 
     <camelContext xmlns="http://camel.apache.org/schema/blueprint">
         <route id="consumer">
-            <from uri="activemq:queue:demo"/>
+            <from uri="activemq:queue:demo?concurrentConsumers=4"/>
+            <log message="Thread used : ${threadName}"/>
             <log message="JMS Message received : ${body}, Index : ${header.splitIndex}, Size : ${header.splitSize} &amp; Complete : ${header.splitComplete}"/>
             <log message="Destination : ${header.JMSDestination}"/>
             <log message="TimeStamp : ${header.JMSTimestamp}"/>
