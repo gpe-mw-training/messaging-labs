@@ -30,11 +30,11 @@ features:install camel-consumer
 
 OR
 
-- Add the features xml file to the ${JBOSS_HOME}/etc/org.apache.karaf.features.cfg end of the file
+- Add the features xml repository to the ${JBOSS_HOME}/etc/org.apache.karaf.features.cfg file (end of this file).
 
 ````
-        ,\
-        mvn:com.fusesource.activemq.exercises/features/0.1-SNAPSHOT/xml/features
+,\
+mvn:com.fusesource.activemq.exercises/features/0.1-SNAPSHOT/xml/features
 ````
 
 - Next, boot Karaf & Deploy the features
