@@ -9,10 +9,11 @@
     </bean>
 
     <camelContext xmlns="http://camel.apache.org/schema/blueprint">
+
         <route id="producer">
             <from uri="file://demo"/>
-            <log message="File has been polled from the directory demo"/>
             <convertBodyTo type="String"/>
+            <log message="File has been polled from the directory demo"/>
             <!-- Enrich Camel Exchange -->
             <setHeader headerName="fileName">
                 <simple>${file:name.ext}</simple>

@@ -2,22 +2,20 @@
 <features xmlns="http://karaf.apache.org/xmlns/features/v1.0.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.0.0 http://karaf.apache.org/xmlns/features/v1.0.0
-http://karaf.apache.org/xmlns/features/v1.0.0 "
+                     http://karaf.apache.org/xmlns/features/v1.0.0 "
           name="redhat-gpe-jboss-fuse-amqcamel-training">
 
     <repository>mvn:org.apache.activemq/activemq-karaf/${activemq.version}/xml/features</repository>
 
     <feature name="config" version="${pom.version}">
         <bundle>mvn:${pom.groupId}/config/${pom.version}</bundle>
-<!--        <config name="poolconfig">
-            activemq.user=admin
-            activemq.password=admin
-        </config>-->
-        <configfile finalname="/etc/poolconfig.cfg" override="false">mvn:com.fusesource.activemq.exercises/features/0.1-SNAPSHOT/cfg/features</configfile>
+        <configfile finalname="/etc/poolconfig.cfg" override="false">
+            mvn:com.fusesource.activemq.exercises/features/0.1-SNAPSHOT/cfg/features
+        </configfile>
     </feature>
 
     <feature name="camel-producer" version="${pom.version}">
-    <feature version="${pom.version}">config</feature>
+        <feature version="${pom.version}">config</feature>
         <feature version="${activemq.version}">activemq-camel</feature>
         <feature version="${camel.version}">camel</feature>
         <feature version="${camel.version}">camel-jms</feature>
@@ -25,10 +23,17 @@ http://karaf.apache.org/xmlns/features/v1.0.0 "
     </feature>
 
     <feature name="camel-consumer" version="${pom.version}">
-    <feature version="${pom.version}">config</feature>
+        <feature version="${pom.version}">config</feature>
         <feature version="${activemq.version}">activemq-camel</feature>
         <feature version="${camel.version}">camel</feature>
         <feature version="${camel.version}">camel-jms</feature>
         <bundle>mvn:${pom.groupId}/consumer/${pom.version}</bundle>
     </feature>
+
+    <feature name="all" version="${pom.version}">
+        <feature version="${pom.version}">config</feature>
+        <feature version="${pom.version}">camel-producer</feature>
+        <feature version="${pom.version}">camel-consumer</feature>
+    </feature>
+
 </features>

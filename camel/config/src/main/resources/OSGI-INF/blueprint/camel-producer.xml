@@ -33,7 +33,6 @@
     <service ref="pooledConnectionFactory" interface="javax.jms.ConnectionFactory">
         <service-properties>
             <entry key="name" value="pool1"/>
-<!--             <entry key="transacted" value="false" /> -->
         </service-properties>
     </service>
 
