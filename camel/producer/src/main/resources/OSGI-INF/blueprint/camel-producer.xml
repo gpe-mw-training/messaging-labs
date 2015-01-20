@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0"
+           xmlns:ext="http://aries.apache.org/blueprint/xmlns/blueprint-ext/v1.0.0">
+
+    <ext:property-placeholder placeholder-prefix="$[" placeholder-suffix="]" />
+
+    <cm:property-placeholder persistent-id="org.apache.activemq.server-default" update-strategy="reload">
+        <cm:default-properties>
+            <cm:property name="broker-name" value="broker1"/>
+            <cm:property name="activemq.user" value="admin"/>
+            <cm:property name="activemq.password" value="admin"/>
+        </cm:default-properties>
+    </cm:property-placeholder>
+
+    <bean id="activemqConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+        <property name="brokerURL" value="tcp://localhost:61616"/>
+        <property name="userName" value="$[activemq.user]" />
+        <property name="password" value="$[activemq.password]" />
+    </bean>
+
+    <bean id="pooledConnectionFactory" class="org.apache.activemq.pool.PooledConnectionFactory">
+        <property name="maxConnections" value="8"/>
+        <property name="connectionFactory" ref="activemqConnectionFactory"/>
+    </bean>
+
+    <reference id="jtaTransactionManager"
+               interface="javax.transaction.TransactionManager"
+               availability="mandatory" />
+
+    <!--
+        Register the javax.jms.ConnectionFactory in the OSGi Service Registry
+    -->
+    <service ref="pooledConnectionFactory" interface="javax.jms.ConnectionFactory">
+        <service-properties>
+            <entry key="name" value="pool1"/>
+<!--             <entry key="transacted" value="false" /> -->
+        </service-properties>
+    </service>
+
+</blueprint>
