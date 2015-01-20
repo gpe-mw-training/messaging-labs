@@ -3,19 +3,7 @@
     <reference id="pooledConnectionFactory" interface="javax.jms.ConnectionFactory"
                filter="(name=pool1)"/>
 
-
-<!--     <bean id="activeMQComponentResolver"
-          class="org.apache.servicemix.activemq.camel.ActiveMQComponentResolver">
-        <property name="connectionFactory" ref="pooledConnectionFactory"/>
-    </bean>
-
-    <service ref="activeMQComponentResolver" interface="org.apache.camel.spi.ComponentResolver" ranking="10">
-        <service-properties>
-            <entry key="component" value="activemq"/>
-        </service-properties>
-    </service> -->
-
-<bean id="activemq" class="org.apache.activemq.camel.component.ActiveMQComponent" >
+    <bean id="activemq" class="org.apache.activemq.camel.component.ActiveMQComponent">
         <property name="connectionFactory" ref="pooledConnectionFactory"/>
     </bean>
 
