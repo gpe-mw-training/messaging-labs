@@ -22,16 +22,8 @@
   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
   http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core.xsd">
 
-    <!-- Allows us to use system properties and fabric as variables in this configuration file -->
-    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="properties">
-            <bean class="org.fusesource.mq.fabric.ConfigurationProperties"/>
-        </property>      
-    </bean>
-
     <broker xmlns="http://activemq.apache.org/schema/core"
-            brokerName="${broker-name}"
-            dataDirectory="${data}"
+            brokerName="broker3"
             start="false">
 
         <destinationPolicy>
@@ -53,7 +45,7 @@
         </managementContext>
 
         <persistenceAdapter>
-            <kahaDB directory="${data}/kahadb"/>
+            <kahaDB directory="target/broker3/kahadb"/>
         </persistenceAdapter>
 
         <plugins>
@@ -75,7 +67,7 @@
         </systemUsage>
         
         <transportConnectors>
-            <transportConnector name="openwire" uri="tcp://0.0.0.0:0?maximumConnections=1000"/>
+            <transportConnector name="openwire" uri="tcp://0.0.0.0:63616?maximumConnections=1000"/>
         </transportConnectors>
     </broker>
 

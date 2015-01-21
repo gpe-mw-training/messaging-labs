@@ -13,6 +13,10 @@
     <artifactId>network-of-brokers</artifactId>
     <packaging>jar</packaging>
 
+    <properties>
+        <broker.config>${pom.basedir}</broker.config>
+    </properties>
+
     <name>ActiveMQ Exercises :: Network of Brokers</name>
 
     <profiles>
@@ -59,6 +63,141 @@
                                 </configuration>
                             </execution>
                         </executions>
+                    </plugin>
+
+
+
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>brokerOne</id>
+            <build>
+                <defaultGoal>package</defaultGoal>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.activemq.tooling</groupId>
+                        <artifactId>activemq-maven-plugin</artifactId>
+                        <version>${activemq.version}</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <phase>package</phase>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <configUri>xbean:file:${broker.config}/broker01/etc/activemq.xml</configUri>
+                            <fork>false</fork>
+                            <systemProperties>
+                                <property>
+                                    <name>org.apache.activemq.default.directory.prefix</name>
+                                    <value>./target/</value>
+                                </property>
+                            </systemProperties>
+                        </configuration>
+                        <dependencies>
+                            <dependency>
+                                <groupId>org.springframework</groupId>
+                                <artifactId>spring-beans</artifactId>
+                                <version>3.2.8.RELEASE</version>
+                            </dependency>
+                            <dependency>
+                                <groupId>org.springframework</groupId>
+                                <artifactId>spring-context</artifactId>
+                                <version>3.2.8.RELEASE</version>
+                            </dependency>
+                        </dependencies>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>brokerTwo</id>
+            <build>
+                <defaultGoal>package</defaultGoal>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.activemq.tooling</groupId>
+                        <artifactId>activemq-maven-plugin</artifactId>
+                        <version>${activemq.version}</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <phase>package</phase>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <configUri>xbean:file:${broker.config}/broker02/etc/activemq.xml</configUri>
+                            <fork>false</fork>
+                            <systemProperties>
+                                <property>
+                                    <name>org.apache.activemq.default.directory.prefix</name>
+                                    <value>./target/</value>
+                                </property>
+                            </systemProperties>
+                        </configuration>
+                        <dependencies>
+                            <dependency>
+                                <groupId>org.springframework</groupId>
+                                <artifactId>spring-beans</artifactId>
+                                <version>3.2.8.RELEASE</version>
+                            </dependency>
+                            <dependency>
+                                <groupId>org.springframework</groupId>
+                                <artifactId>spring-context</artifactId>
+                                <version>3.2.8.RELEASE</version>
+                            </dependency>
+                        </dependencies>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>brokerThree</id>
+            <build>
+                <defaultGoal>package</defaultGoal>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.activemq.tooling</groupId>
+                        <artifactId>activemq-maven-plugin</artifactId>
+                        <version>${activemq.version}</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <phase>package</phase>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <configUri>xbean:file:${broker.config}/broker03/etc/activemq.xml</configUri>
+                            <fork>false</fork>
+                            <systemProperties>
+                                <property>
+                                    <name>org.apache.activemq.default.directory.prefix</name>
+                                    <value>./target/</value>
+                                </property>
+                            </systemProperties>
+                        </configuration>
+                        <dependencies>
+                            <dependency>
+                                <groupId>org.springframework</groupId>
+                                <artifactId>spring-beans</artifactId>
+                                <version>3.2.8.RELEASE</version>
+                            </dependency>
+                            <dependency>
+                                <groupId>org.springframework</groupId>
+                                <artifactId>spring-context</artifactId>
+                                <version>3.2.8.RELEASE</version>
+                            </dependency>
+                        </dependencies>
                     </plugin>
                 </plugins>
             </build>

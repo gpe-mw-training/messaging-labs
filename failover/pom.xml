@@ -13,6 +13,10 @@
     <artifactId>failover</artifactId>
     <packaging>jar</packaging>
 
+    <properties>
+        <broker.config>${pom.basedir}</broker.config>
+    </properties>
+
     <name>ActiveMQ Exercises :: Failover</name>
 
     <build>
@@ -52,7 +56,7 @@
                         </executions>
                         <configuration>
                             <configUri>
-                                xbean:file:/Users/chmoulli/RedHat/GPE/content/github-activemq-labs/failover/broker01/etc/activemq.xml
+                                xbean:file:${broker.config}/broker01/etc/activemq.xml
                             </configUri>
                             <fork>false</fork>
                             <systemProperties>
@@ -98,7 +102,7 @@
                         </executions>
                         <configuration>
                             <configUri>
-                                xbean:file:/Users/chmoulli/RedHat/GPE/content/github-activemq-labs/failover/broker02/etc/activemq.xml
+                                xbean:file:${broker.config}/broker02/etc/activemq.xml
                             </configUri>
                             <fork>false</fork>
                             <systemProperties>
