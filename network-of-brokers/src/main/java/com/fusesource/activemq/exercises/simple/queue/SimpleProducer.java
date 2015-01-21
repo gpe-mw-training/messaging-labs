@@ -32,7 +32,7 @@ public class SimpleProducer {
             MESSAGE_DELAY_MILLISECONDS =
 				Integer.parseInt(System.getProperty("Delay", "100"));
             NUM_MESSAGES_TO_BE_SENT =
-				Integer.parseInt(System.getProperty("NumMessages", "25"));
+				Integer.parseInt(System.getProperty("NumMessages", "100"));
             DESTINATION_NAME =
 				System.getProperty("Destination", "queue/simple");
 
