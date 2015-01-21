@@ -48,9 +48,9 @@
             <kahaDB directory="target/broker2/kahadb"/>
         </persistenceAdapter>
 
-        <plugins>
+<!--        <plugins>
             <jaasAuthenticationPlugin configuration="karaf" />
-        </plugins>
+        </plugins>-->
 
         <systemUsage>
             <systemUsage>

@@ -32,16 +32,13 @@ public class SimpleConsumer {
             
             Context context = new InitialContext(props);
             
-            LOG.info("");
-            LOG.info("");
-            
             LOG.info("Successfully connected to broker: " + uri);
             
             // Context context = new InitialContext();
             ConnectionFactory factory = (ConnectionFactory) context.lookup(CONNECTION_FACTORY_NAME);
             Destination destination = (Destination) context.lookup(DESTINATION_NAME);
 
-            connection = factory.createConnection("admin", "admin");
+            connection = factory.createConnection();
             connection.start();
 
             Session session = connection.createSession(NON_TRANSACTED, Session.AUTO_ACKNOWLEDGE);

@@ -29,8 +29,6 @@
 
         <networkConnectors>
             <networkConnector uri="static:(tcp://localhost:62616,tcp://localhost:63616)"
-                              userName="admin"
-                              password="admin"
                               prefetchSize="1000"/>
         </networkConnectors>
         
@@ -38,9 +36,9 @@
             <kahaDB directory="target/broker1/kahadb"/>
         </persistenceAdapter>
 
-        <plugins>
+<!--        <plugins>
             <jaasAuthenticationPlugin configuration="karaf" />
-        </plugins>
+        </plugins>-->
 
         <systemUsage>
             <systemUsage>
