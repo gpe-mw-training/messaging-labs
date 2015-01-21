@@ -22,9 +22,7 @@ public class SimpleProducer {
         Connection connection = null;
 
         try {
-
 		 	// Initialize control variables from the command line
-
             MESSAGE_TIME_TO_LIVE_MILLISECONDS =
 				Long.parseLong(System.getProperty("TimeToLive", "0"));
             MESSAGE_DELAY_MILLISECONDS =
