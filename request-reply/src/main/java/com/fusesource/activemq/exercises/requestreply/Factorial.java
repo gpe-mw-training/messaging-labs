@@ -1,12 +1,11 @@
 package com.fusesource.activemq.exercises.requestreply;
 
 import java.math.BigDecimal;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Factorial {
-	private static final Log LOG = LogFactory.getLog(Server.class);
+	private static final Logger LOG = LoggerFactory.getLogger(Server.class);
 	
 	public static BigDecimal factorial(int n) {
     	long start = System.currentTimeMillis();

@@ -1,7 +1,7 @@
 package com.fusesource.activemq.exercises.durablechat;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.jms.*;
 import javax.naming.Context;
@@ -9,7 +9,7 @@ import javax.naming.InitialContext;
 import java.util.Scanner;
 
 public class DurableChat {
-    private static final Log LOG = LogFactory.getLog(DurableChat.class);
+    private static final Logger LOG = LoggerFactory.getLogger(DurableChat.class);
 
     private static final Boolean NON_TRANSACTED = false;
     private static final String CONNECTION_FACTORY_NAME = "myJmsFactory";
@@ -92,7 +92,7 @@ public class DurableChat {
             publisher.close();
             pubSession.close();
         } catch (Throwable t) {
-            LOG.error(t);
+            LOG.error("JMS Issue",t);
         } finally {
             // Cleanup code
             // In general, you should always close producers, consumers,
@@ -103,7 +103,7 @@ public class DurableChat {
                 try {
                     connection.close();
                 } catch (JMSException e) {
-                    LOG.error(e);
+                    LOG.error("JMS Issue",e);
                 }
             }
         }

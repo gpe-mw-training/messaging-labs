@@ -1,7 +1,7 @@
 package com.fusesource.activemq.exercises.transactedchat;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.jms.*;
 import javax.naming.Context;
@@ -9,7 +9,7 @@ import javax.naming.InitialContext;
 import java.util.Scanner;
 
 public class TransactedChat {
-    private static final Log LOG = LogFactory.getLog(TransactedChat.class);
+    private static final Logger LOG = LoggerFactory.getLogger(TransactedChat.class);
 
     private static final Boolean NON_TRANSACTED = false;
     private static final Boolean TRANSACTED = true;
@@ -108,7 +108,7 @@ public class TransactedChat {
             publisher.close();
             pubSession.close();
         } catch (Throwable t) {
-            LOG.error(t);
+            LOG.error("JMS Issue : ", t);
         } finally {
             // Cleanup code
             // In general, you should always close producers, consumers,
@@ -119,7 +119,7 @@ public class TransactedChat {
                 try {
                     connection.close();
                 } catch (JMSException e) {
-                    LOG.error(e);
+                    LOG.error("JMS Issue : ",e);
                 }
             }
         }

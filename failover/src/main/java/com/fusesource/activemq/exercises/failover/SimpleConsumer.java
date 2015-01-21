@@ -1,7 +1,7 @@
 package com.fusesource.activemq.exercises.failover;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.jms.*;
 import javax.naming.Context;
@@ -9,7 +9,7 @@ import javax.naming.InitialContext;
 import java.util.*;
 
 public class SimpleConsumer {
-    private static final Log LOG = LogFactory.getLog(SimpleConsumer.class);
+    private static final Logger LOG = LoggerFactory.getLogger(SimpleConsumer.class);
 
     private static final Boolean NON_TRANSACTED = false;
     private static final String CONNECTION_FACTORY_NAME = "myJmsFactory";
@@ -21,14 +21,14 @@ public class SimpleConsumer {
 
         try {
             String uri = "failover:(tcp://localhost:61616,tcp://localhost:62616)";
-            
+
             // JNDI lookup of JMS Connection Factory and JMS Destination
             Properties props = new Properties();
-            props.setProperty(Context.INITIAL_CONTEXT_FACTORY,"org.apache.activemq.jndi.ActiveMQInitialContextFactory");
+            props.setProperty(Context.INITIAL_CONTEXT_FACTORY, "org.apache.activemq.jndi.ActiveMQInitialContextFactory");
             props.setProperty(Context.PROVIDER_URL, uri);
-            
+
             Context context = new InitialContext(props);
-            
+
             ConnectionFactory factory = (ConnectionFactory) context.lookup(CONNECTION_FACTORY_NAME);
             Destination destination = (Destination) context.lookup(DESTINATION_NAME);
 
@@ -57,7 +57,7 @@ public class SimpleConsumer {
             consumer.close();
             session.close();
         } catch (Throwable t) {
-            LOG.error(t);
+            LOG.error("JMS Issue", t);
         } finally {
             // Cleanup code
             // In general, you should always close producers, consumers,
@@ -68,7 +68,7 @@ public class SimpleConsumer {
                 try {
                     connection.close();
                 } catch (JMSException e) {
-                    LOG.error(e);
+                    LOG.error("JMS Issue", e);
                 }
             }
         }

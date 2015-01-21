@@ -1,14 +1,14 @@
 package com.fusesource.activemq.exercises.exclusive;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.jms.*;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 
 public class SimpleProducer {
-    private static final Log LOG = LogFactory.getLog(SimpleProducer.class);
+    private static final Logger LOG = LoggerFactory.getLogger(SimpleProducer.class);
 
     private static Boolean 	NON_TRANSACTED = false;
     private static long 	MESSAGE_TIME_TO_LIVE_MILLISECONDS = 0;
@@ -57,7 +57,7 @@ public class SimpleProducer {
             producer.close();
             session.close();
         } catch (Throwable t) {
-            LOG.error(t);
+            LOG.error("JMS Issue",t);
         } finally {
             // Cleanup code
             // In general, you should always close producers, consumers,
@@ -68,7 +68,7 @@ public class SimpleProducer {
                 try {
                     connection.close();
                 } catch (JMSException e) {
-                    LOG.error(e);
+                    LOG.error("JMS Issue",e);
                 }
             }
         }
