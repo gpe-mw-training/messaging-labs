@@ -19,6 +19,7 @@
             <to uri="twitter://search?keywords=redhat"/>
             <split>
                 <simple>${body}</simple>
+                <convertBodyTo type="String"/>
                 <!-- Query should be case insensitive. We could use a regex or groovy, ruby ...-->
                 <filter>
                     <!-- <simple>${body} regex '/red/i'</simple> -->
