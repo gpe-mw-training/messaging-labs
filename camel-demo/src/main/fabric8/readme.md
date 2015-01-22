@@ -1,1 +1,6 @@
 # This is a cool twitter camel demo
+
+consumer.key=rtPIDQIqbGsEK1TEQA5g
+consumer.secret=HyoWW3B4wJHesm0tvf4IVI9C9aRHX40TuyEz8qrk
+access.token=79766620-DoreB85PQt3bCDMpQQYUsBTzRprjOAAulD2RmG0IP
+access.token.secret=VNjI9IrPNA2XHEnlGF37QZAzOuRzHY3esg0B8jWGs
