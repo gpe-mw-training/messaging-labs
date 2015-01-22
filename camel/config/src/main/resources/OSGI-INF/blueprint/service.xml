@@ -3,7 +3,6 @@
            xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0">
 
     <cm:property-placeholder persistent-id="poolconfig"
-                             update-strategy="reload"
                              placeholder-prefix="$[" placeholder-suffix="]">
         <cm:default-properties>
             <cm:property name="broker-name" value="broker1"/>
@@ -12,13 +11,13 @@
         </cm:default-properties>
     </cm:property-placeholder>
 
-    <bean id="activemqConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+    <bean id="activemqConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory" activation="eager">
         <property name="brokerURL" value="tcp://localhost:61616"/>
         <property name="userName" value="$[activemq.user]" />
         <property name="password" value="$[activemq.password]" />
     </bean>
 
-    <bean id="pooledConnectionFactory" class="org.apache.activemq.pool.PooledConnectionFactory">
+    <bean id="pooledConnectionFactory" class="org.apache.activemq.pool.PooledConnectionFactory" activation="eager">
         <property name="maxConnections" value="8"/>
         <property name="connectionFactory" ref="activemqConnectionFactory"/>
     </bean>
