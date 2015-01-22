@@ -77,8 +77,10 @@
                 <configuration>
                     <instructions>
                         <Import-Package>
-                            *
+                            *,
+                            groovy.lang
                         </Import-Package>
+                        <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
                 </configuration>
             </plugin>
