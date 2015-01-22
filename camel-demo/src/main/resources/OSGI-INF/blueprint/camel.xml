@@ -17,7 +17,10 @@
             <from uri="timer:cool?period=5000"/>
             <log message="Timer triggered"/>
             <to uri="twitter://search?keywords=redhat"/>
-            <log message=""/>
+            <split>
+                <simple>${body}</simple>
+                <log message="Tweet received : ${body}"/>
+            </split>
         </route>
     </camelContext>
 </blueprint>
