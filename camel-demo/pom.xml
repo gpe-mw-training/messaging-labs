@@ -15,6 +15,11 @@
     <properties>
         <camel.version>2.12.0.redhat-610379</camel.version>
         <jboss.fuse.bom.version>6.1.0.redhat-379</jboss.fuse.bom.version>
+
+        <!-- Fabric8 Definition -->
+        <fabric8.profile>training-demo-camel</fabric8.profile>
+        <fabric8.parentProfiles>feature-camel</fabric8.parentProfiles>
+        <fabric8.features>camel</fabric8.features>
     </properties>
 
     <dependencyManagement>
@@ -38,6 +43,10 @@
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-blueprint</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-twitter</artifactId>
         </dependency>
 
         <!-- Logging -->
