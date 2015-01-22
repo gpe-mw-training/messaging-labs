@@ -19,7 +19,12 @@
             <to uri="twitter://search?keywords=redhat"/>
             <split>
                 <simple>${body}</simple>
-                <log message="Tweet received : ${body}"/>
+                <!-- Query should be case insensitive. We could use a regex or groovy, ruby ...-->
+                <filter>
+                    <!-- <simple>${body} regex '/red/i'</simple> -->
+                    <groovy>request.body.toLowerCase().contains('redhat')</groovy>
+                    <log message="Tweet : ${body}"/>
+                </filter>
             </split>
         </route>
     </camelContext>
