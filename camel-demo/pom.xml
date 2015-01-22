@@ -51,6 +51,8 @@
         </dependency>
     </dependencies>
 
+
+
     <repositories>
         <repository>
             <id>fusesource-public-repository</id>
