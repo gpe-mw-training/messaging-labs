@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0">
+
+    <cm:property-placeholder persistent-id="twitterconfig"
+                             placeholder-prefix="$[" placeholder-suffix="]"/>
 
     <bean id="twitter" class="org.apache.camel.component.twitter.TwitterComponent">
-        <property name="consumerKey" value=""/>
-        <property name="consumerSecret" value=""/>
-        <property name="accessToken" value=""/>
-        <property name="accessTokenSecret" value=""/>
+        <property name="consumerKey" value="$[consumer.key]"/>
+        <property name="consumerSecret" value="$[consumer.secret]"/>
+        <property name="accessToken" value="$[access.token]"/>
+        <property name="accessTokenSecret" value="$[access.token.secret]"/>
     </bean>
 
     <camelContext id="consumer-ctx" xmlns="http://camel.apache.org/schema/blueprint">
