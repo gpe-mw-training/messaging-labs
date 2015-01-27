@@ -57,6 +57,7 @@
                             org.apache.activemq.camel.component,
                             org.osgi.service.blueprint;version="[1.0.0,2.0.0)"
                         </Import-Package>
+                        <Import-Service>javax.jms.ConnectionFactory;name=pool1</Import-Service>
                     </instructions>
                 </configuration>
             </plugin>
