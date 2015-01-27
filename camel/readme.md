@@ -23,7 +23,7 @@ features:addurl mvn:com.fusesource.activemq.exercises/features/0.1-SNAPSHOT/xml/
 - Deploy the project
 
 ````
-features:install config
+features:install service
 features:install camel-producer
 features:install camel-consumer
 ````

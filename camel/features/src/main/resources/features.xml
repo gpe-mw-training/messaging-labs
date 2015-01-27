@@ -7,15 +7,15 @@
 
     <repository>mvn:org.apache.activemq/activemq-karaf/${activemq.version}/xml/features</repository>
 
-    <feature name="config" version="${pom.version}">
-        <bundle>mvn:${pom.groupId}/config/${pom.version}</bundle>
+    <feature name="service" version="${pom.version}">
+        <bundle>mvn:${pom.groupId}/service/${pom.version}</bundle>
         <configfile finalname="/etc/poolconfig.cfg" override="false">
             mvn:com.fusesource.activemq.exercises/features/0.1-SNAPSHOT/cfg/features
         </configfile>
     </feature>
 
     <feature name="camel-producer" version="${pom.version}">
-        <feature version="${pom.version}">config</feature>
+        <feature version="${pom.version}">service</feature>
         <feature version="${activemq.version}">activemq-camel</feature>
         <feature version="${camel.version}">camel</feature>
         <feature version="${camel.version}">camel-jms</feature>
@@ -23,7 +23,7 @@
     </feature>
 
     <feature name="camel-consumer" version="${pom.version}">
-        <feature version="${pom.version}">config</feature>
+        <feature version="${pom.version}">service</feature>
         <feature version="${activemq.version}">activemq-camel</feature>
         <feature version="${camel.version}">camel</feature>
         <feature version="${camel.version}">camel-jms</feature>
@@ -31,7 +31,7 @@
     </feature>
 
     <feature name="all" version="${pom.version}">
-        <feature version="${pom.version}">config</feature>
+        <feature version="${pom.version}">service</feature>
         <feature version="${pom.version}">camel-producer</feature>
         <feature version="${pom.version}">camel-consumer</feature>
     </feature>
