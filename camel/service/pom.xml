@@ -9,8 +9,8 @@
         <version>0.1-SNAPSHOT</version>
     </parent>
 
-    <name>JBoss A-MQ Exercise :: Camel :: Config</name>
-    <artifactId>config</artifactId>
+    <name>JBoss A-MQ Exercise :: Camel :: Service</name>
+    <artifactId>service</artifactId>
     <packaging>bundle</packaging>
 
     <build>
@@ -22,13 +22,8 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Export-Package>
-                            *
-                        </Export-Package>
-                        <!-- we must set the version for org.slf4j explicitly, to match that used in JBoss Fuse -->
-                        <Import-Package>
-                            *
-                        </Import-Package>
+                        <Export-Package>*</Export-Package>
+                        <Import-Package>*</Import-Package>
                         <Export-Service>javax.jms.ConnectionFactory;name=pool1</Export-Service>
                     </instructions>
                 </configuration>
