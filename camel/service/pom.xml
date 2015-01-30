@@ -22,7 +22,6 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Export-Package>*</Export-Package>
                         <Import-Package>*</Import-Package>
                         <Export-Service>javax.jms.ConnectionFactory;name=pool1</Export-Service>
                     </instructions>
