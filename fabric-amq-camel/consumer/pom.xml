@@ -11,7 +11,7 @@
 
     <artifactId>consumer</artifactId>
     <packaging>bundle</packaging>
-    <name>JBoss A-MQ Exercise :: Camel Consumer</name>
+    <name>JBoss A-MQ Exercise :: Camel :: Consumer</name>
     
     <dependencies>
         <!-- Camel -->

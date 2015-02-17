@@ -11,7 +11,7 @@
 
     <artifactId>producer</artifactId>
     <packaging>bundle</packaging>
-    <name>JBoss A-MQ Exercise :: Camel Producer</name>
+    <name>JBoss A-MQ Exercise :: Camel :: Producer</name>
 
     <dependencies>
         <!-- Camel -->
