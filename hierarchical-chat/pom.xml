@@ -4,16 +4,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.fusesource.activemq.exercises</groupId>
-        <artifactId>activemq-exercises</artifactId>
-        <version>0.1-SNAPSHOT</version>
+        <groupId>com.redhat.gpe.training</groupId>
+        <artifactId>fuse-messaging</artifactId>
+        <version>1.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>hierarchical-chat</artifactId>
     <packaging>jar</packaging>
 
-    <name>ActiveMQ Exercises :: Hierarchical Chat</name>
+    <name>RedHat GPE Training :: Messaging :: Hierarchical Chat</name>
 
     <profiles>
         <profile>
@@ -57,7 +57,7 @@
                                     <goal>java</goal>
                                 </goals>
                                 <configuration>
-                                    <mainClass>com.fusesource.activemq.exercises.hierarchicalchat.HierarchicalChat
+                                    <mainClass>com.redhat.gpe.training.messaging.hierarchichalcat.HierarchicalChat
                                     </mainClass>
                                     <systemProperties>
                                         <systemProperty>

@@ -4,13 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>activemq-exercises</artifactId>
-        <groupId>com.fusesource.activemq.exercises</groupId>
-        <version>0.1-SNAPSHOT</version>
+        <artifactId>fuse-messaging</artifactId>
+        <groupId>com.redhat.gpe.training</groupId>
+        <version>1.0</version>
     </parent>
     <packaging>pom</packaging>
     <name>JBoss A-MQ Exercise :: Camel</name>
-    <artifactId>camel</artifactId>
+    <artifactId>fabric-amq-camel</artifactId>
 
     <properties>
         <camel.version>2.12.0.redhat-610379</camel.version>

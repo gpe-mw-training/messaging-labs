@@ -4,16 +4,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.fusesource.activemq.exercises</groupId>
-        <artifactId>activemq-exercises</artifactId>
-        <version>0.1-SNAPSHOT</version>
+        <groupId>com.redhat.gpe.training</groupId>
+        <artifactId>fuse-messaging</artifactId>
+        <version>1.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>virtual-destination</artifactId>
     <packaging>jar</packaging>
 
-    <name>ActiveMQ Exercises :: Virtual Destinations Handling</name>
+    <name>RedHat GPE Training :: Messaging :: Virtual Destinations Handling</name>
 
     <profiles>
         <profile>
@@ -86,7 +86,7 @@
                                     <goal>java</goal>
                                 </goals>
                                 <configuration>
-                                    <mainClass>com.fusesource.activemq.exercises.virtual.SimpleListener</mainClass>
+                                    <mainClass>com.redhat.gpe.training.messaging.virtual.SimpleListener</mainClass>
                                     <systemProperties>
                                         <systemProperty>
                                             <key>destinationExt</key>
@@ -116,7 +116,7 @@
                                     <goal>java</goal>
                                 </goals>
                                 <configuration>
-                                    <mainClass>com.fusesource.activemq.exercises.virtual.SimpleProducer</mainClass>
+                                    <mainClass>com.redhat.gpe.training.messaging.virtual.SimpleProducer</mainClass>
                                 </configuration>
                             </execution>
                         </executions>

@@ -4,9 +4,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.fusesource.activemq.exercises</groupId>
-        <artifactId>activemq-exercises</artifactId>
-        <version>0.1-SNAPSHOT</version>
+        <groupId>com.redhat.gpe.training</groupId>
+        <artifactId>fuse-messaging</artifactId>
+        <version>1.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -17,7 +17,7 @@
         <broker.config>${pom.basedir}</broker.config>
     </properties>
 
-    <name>ActiveMQ Exercises :: Failover</name>
+    <name>RedHat GPE Training :: Messaging :: Failover</name>
 
     <build>
         <resources>
@@ -144,7 +144,7 @@
                                     <goal>java</goal>
                                 </goals>
                                 <configuration>
-                                    <mainClass>com.fusesource.activemq.exercises.failover.SimpleConsumer</mainClass>
+                                    <mainClass>com.redhat.gpe.training.messaging.failover.SimpleConsumer</mainClass>
                                 </configuration>
                             </execution>
                         </executions>
@@ -168,7 +168,7 @@
                                     <goal>java</goal>
                                 </goals>
                                 <configuration>
-                                    <mainClass>com.fusesource.activemq.exercises.failover.SimpleProducer</mainClass>
+                                    <mainClass>com.redhat.gpe.training.messaging.failover.SimpleProducer</mainClass>
                                 </configuration>
                             </execution>
                         </executions>

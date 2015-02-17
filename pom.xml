@@ -3,12 +3,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.fusesource.activemq.exercises</groupId>
-    <artifactId>activemq-exercises</artifactId>
+    <groupId>com.redhat.gpe.training</groupId>
+    <artifactId>fuse-messaging</artifactId>
     <packaging>pom</packaging>
-    <version>0.1-SNAPSHOT</version>
+    <version>1.0</version>
 
-    <name>ActiveMQ Exercises</name>
+    <name>RedHat GPE Training :: Fuse Messaging Project</name>
 
     <properties>
         <jboss.fuse.bom.version>6.1.0.redhat-379</jboss.fuse.bom.version>
@@ -72,7 +72,7 @@
         <module>transacted-chat</module>
         <module>multiple-consumer</module>
         <module>virtual-destination</module>
-        <module>camel-demo</module>
+        <module>camel</module>
     </modules>
 
     <repositories>

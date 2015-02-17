@@ -4,9 +4,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.fusesource.activemq.exercises</groupId>
-        <artifactId>activemq-exercises</artifactId>
-        <version>0.1-SNAPSHOT</version>
+        <groupId>com.redhat.gpe.training</groupId>
+        <artifactId>fuse-messaging</artifactId>
+        <version>1.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -17,7 +17,7 @@
         <broker.config>${pom.basedir}</broker.config>
     </properties>
 
-    <name>ActiveMQ Exercises :: Network of Brokers</name>
+    <name>RedHat GPE Training :: Messaging :: Network of Brokers</name>
 
     <profiles>
         <profile>
@@ -35,7 +35,7 @@
                                     <goal>java</goal>
                                 </goals>
                                 <configuration>
-                                    <mainClass>com.fusesource.activemq.exercises.simple.queue.SimpleConsumer</mainClass>
+                                    <mainClass>com.redhat.gpe.training.messaging.queue.SimpleConsumer</mainClass>
                                 </configuration>
                             </execution>
                         </executions>
@@ -59,7 +59,7 @@
                                     <goal>java</goal>
                                 </goals>
                                 <configuration>
-                                    <mainClass>com.fusesource.activemq.exercises.simple.queue.SimpleProducer</mainClass>
+                                    <mainClass>com.redhat.gpe.training.messaging.queue.SimpleProducer</mainClass>
                                 </configuration>
                             </execution>
                         </executions>

@@ -4,16 +4,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.fusesource.activemq.exercises</groupId>
-        <artifactId>activemq-exercises</artifactId>
-        <version>0.1-SNAPSHOT</version>
+        <groupId>com.redhat.gpe.training</groupId>
+        <artifactId>fuse-messaging</artifactId>
+        <version>1.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>message-groups</artifactId>
     <packaging>jar</packaging>
 
-    <name>ActiveMQ Exercises :: Message Groups Handling</name>
+    <name>RedHat GPE Training :: Messaging :: Message Groups Handling</name>
 
     <profiles>
         <profile>
@@ -31,7 +31,7 @@
                                     <goal>java</goal>
                                 </goals>
                                 <configuration>
-                                    <mainClass>com.fusesource.activemq.exercises.messagegroups.SimpleConsumer
+                                    <mainClass>com.redhat.gpe.training.messaging.messagegroups.SimpleConsumer
                                     </mainClass>
                                 </configuration>
                             </execution>
@@ -56,7 +56,7 @@
                                     <goal>java</goal>
                                 </goals>
                                 <configuration>
-                                    <mainClass>com.fusesource.activemq.exercises.messagegroups.SimpleProducer
+                                    <mainClass>com.redhat.gpe.training.messaging.messagegroups.SimpleProducer
                                     </mainClass>
                                 </configuration>
                             </execution>
