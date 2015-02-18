@@ -13,4 +13,10 @@
     <artifactId>messaging-lab4-project</artifactId>
     <name>RedHat GPE Training :: Messaging :: Lab 4 :: Project</name>
     
+    <modules>
+        <module>security</module>
+        <module>jmx</module>
+        <module>logging-audit</module>
+    </modules>
+    
 </project>

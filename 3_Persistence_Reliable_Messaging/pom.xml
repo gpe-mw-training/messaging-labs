@@ -14,6 +14,7 @@
     <name>RedHat GPE Training :: Messaging :: Lab 3 :: Project</name>
     
     <modules>
+        <module>persistence</module>
         <module>failover</module>
         <module>network-of-brokers</module>
     </modules>
