@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.redhat.gpe.training</groupId>
+        <artifactId>messaging-lab3-project</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <artifactId>hierarchical-chat</artifactId>
+    <packaging>jar</packaging>
+
+    <name>RedHat GPE Training :: Messaging :: Lab 3 :: Hierarchical Chat</name>
+
+    <profiles>
+        <profile>
+            <id>chatter</id>
+            <build>
+                <defaultGoal>package</defaultGoal>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-enforcer-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>enforce-property</id>
+                                <phase>initialize</phase>
+                                <goals>
+                                    <goal>enforce</goal>
+                                </goals>
+                                <configuration>
+                                    <rules>
+                                        <requireProperty>
+                                            <property>type</property>
+                                            <message>You must define a type (e.g. -Dtype=world)</message>
+                                        </requireProperty>
+                                        <requireProperty>
+                                            <property>ptype</property>
+                                            <message>You must define a ptype (e.g. -Dptype=".*")</message>
+                                        </requireProperty>
+                                    </rules>
+                                    <fail>true</fail>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>java</goal>
+                                </goals>
+                                <configuration>
+                                    <mainClass>com.redhat.gpe.training.messaging.hierarchichalcat.HierarchicalChat
+                                    </mainClass>
+                                    <systemProperties>
+                                        <systemProperty>
+                                            <key>ChatName</key>
+                                            <value>${type}</value>
+                                        </systemProperty>
+                                        <systemProperty>
+                                            <key>PolicyType</key>
+                                            <value>${ptype}</value>
+                                        </systemProperty>
+                                    </systemProperties>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>

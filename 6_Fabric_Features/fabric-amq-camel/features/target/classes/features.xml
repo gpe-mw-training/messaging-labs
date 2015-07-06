@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.0.0 http://karaf.apache.org/xmlns/features/v1.0.0
+                     http://karaf.apache.org/xmlns/features/v1.0.0 "
+          name="redhat-gpe-jboss-fuse-amqcamel-training">
+
+    <repository>mvn:org.apache.activemq/activemq-karaf/5.9.0.redhat-610379/xml/features</repository>
+
+    <feature name="service" version="1.0">
+        <bundle>mvn:com.redhat.gpe.training/service/1.0</bundle>
+        <configfile finalname="/etc/poolconfig.cfg" override="false">
+            mvn:com.fusesource.activemq.exercises/features/0.1-SNAPSHOT/cfg/features
+        </configfile>
+    </feature>
+
+    <feature name="camel-producer" version="1.0">
+        <feature version="1.0">service</feature>
+        <feature version="5.9.0.redhat-610379">activemq-camel</feature>
+        <feature version="2.12.0.redhat-610379">camel</feature>
+        <feature version="2.12.0.redhat-610379">camel-jms</feature>
+        <bundle>mvn:com.redhat.gpe.training/producer/1.0</bundle>
+    </feature>
+
+    <feature name="camel-consumer" version="1.0">
+        <feature version="1.0">service</feature>
+        <feature version="5.9.0.redhat-610379">activemq-camel</feature>
+        <feature version="2.12.0.redhat-610379">camel</feature>
+        <feature version="2.12.0.redhat-610379">camel-jms</feature>
+        <bundle>mvn:com.redhat.gpe.training/consumer/1.0</bundle>
+    </feature>
+
+    <feature name="all" version="1.0">
+        <feature version="1.0">service</feature>
+        <feature version="1.0">camel-producer</feature>
+        <feature version="1.0">camel-consumer</feature>
+    </feature>
+
+</features>

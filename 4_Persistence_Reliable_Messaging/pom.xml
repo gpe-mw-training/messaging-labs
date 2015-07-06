@@ -8,16 +8,17 @@
         <groupId>com.redhat.gpe.training</groupId>
         <version>1.0</version>
     </parent>
-    
+
+    <artifactId>messaging-lab4-project</artifactId>
     <packaging>pom</packaging>
-    <artifactId>messaging-lab2-project</artifactId>
-    <name>RedHat GPE Training :: Messaging :: Lab 2 :: Project</name>
+    <name>RedHat GPE Training :: Messaging :: Lab 4 :: Project</name>
     
     <modules>
-        <module>durable-chat</module>
-        <module>multiple-consumer</module>
-        <module>request-reply</module>
-        <module>transacted-chat</module>
+        <module>failover</module>
+        <module>failover-dynamic</module>
+        <module>network-of-brokers</module>
+        <module>persistence</module>
     </modules>
-    
+
+
 </project>

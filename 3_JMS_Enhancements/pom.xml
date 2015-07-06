@@ -10,14 +10,15 @@
     </parent>
     
     <packaging>pom</packaging>
-    <artifactId>messaging-lab2-project</artifactId>
-    <name>RedHat GPE Training :: Messaging :: Lab 2 :: Project</name>
-    
+    <artifactId>messaging-lab3-project</artifactId>
+    <name>RedHat GPE Training :: Messaging :: Lab 3 :: Project</name>
+
     <modules>
-        <module>durable-chat</module>
-        <module>multiple-consumer</module>
-        <module>request-reply</module>
-        <module>transacted-chat</module>
+        <module>exclusive-consumer</module>
+        <module>hierarchical-chat</module>
+        <module>message-groups</module>
+        <module>prioritized-exclusive-consumer</module>
+        <module>virtual-destination</module>
     </modules>
     
 </project>
