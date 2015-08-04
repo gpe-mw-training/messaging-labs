@@ -1,4 +1,4 @@
-package com.redhat.gpe.training.messaging.failover;
+package com.redhat.gpe.training.messaging.loggingaudit;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
