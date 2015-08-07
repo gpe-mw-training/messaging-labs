@@ -14,12 +14,8 @@
     <name>RedHat GPE Training :: Messaging :: Lab 1 :: Project</name>
     
     <modules>
-        <module>durable-chat</module>
-        <module>multiple-consumer</module>
-        <module>request-reply</module>
         <module>simple-queue</module>
         <module>simple-topic</module>
-        <module>transacted-chat</module>
     </modules>
     
 </project>

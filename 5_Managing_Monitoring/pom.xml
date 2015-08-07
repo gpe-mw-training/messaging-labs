@@ -10,14 +10,13 @@
     </parent>
     
     <packaging>pom</packaging>
-    <artifactId>messaging-lab2-project</artifactId>
-    <name>RedHat GPE Training :: Messaging :: Lab 2 :: Project</name>
+    <artifactId>messaging-lab5-project</artifactId>
+    <name>RedHat GPE Training :: Messaging :: Lab 5 :: Project</name>
     
     <modules>
-        <module>durable-chat</module>
-        <module>multiple-consumer</module>
-        <module>request-reply</module>
-        <module>transacted-chat</module>
+        <module>security</module>
+        <module>jmx</module>
+        <module>logging-audit</module>
     </modules>
     
 </project>
