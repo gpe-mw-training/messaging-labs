@@ -45,7 +45,6 @@
                     <plugin>
                         <groupId>org.apache.activemq.tooling</groupId>
                         <artifactId>activemq-maven-plugin</artifactId>
-                        <version>${activemq.version}</version>
                         <executions>
                             <execution>
                                 <goals>
