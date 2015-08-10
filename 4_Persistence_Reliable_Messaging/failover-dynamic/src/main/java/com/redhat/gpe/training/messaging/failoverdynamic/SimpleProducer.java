@@ -26,7 +26,7 @@ public class SimpleProducer {
             MESSAGE_TIME_TO_LIVE_MILLISECONDS =
 				Long.parseLong(System.getProperty("TimeToLive", "0"));
             MESSAGE_DELAY_MILLISECONDS =
-				Integer.parseInt(System.getProperty("Delay", "100"));
+				Integer.parseInt(System.getProperty("Delay", "500"));
             NUM_MESSAGES_TO_BE_SENT =
 				Integer.parseInt(System.getProperty("NumMessages", "100"));
             DESTINATION_NAME =
