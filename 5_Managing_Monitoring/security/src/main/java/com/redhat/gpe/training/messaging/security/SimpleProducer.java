@@ -32,7 +32,7 @@ public class SimpleProducer {
             DESTINATION_NAME =
 				System.getProperty("Destination", "queue/simple");
 
-            String uri = "failover:(tcp://localhost:61616,tcp://localhost:62616)";
+            String uri = "tcp://localhost:61616";
             
             // JNDI lookup of JMS Connection Factory and JMS Destination
             Properties props = new Properties();

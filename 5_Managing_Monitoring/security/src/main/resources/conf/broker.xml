@@ -1,20 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--  
-    Secure ActiveMQ broker
-    For more information, see:
-    
-    http://activemq.apache.org/security.html
-    
-    Before you can run this configuration, you need to set ACTIVEMQ_ENCRYPTION_PASSWORD environment variable, like
-    
-    $ export ACTIVEMQ_ENCRYPTION_PASSWORD=activemq
-    
-    For more information see: http://activemq.apache.org/encrypted-passwords.html
-    
-    To run ActiveMQ with this configuration add xbean:examples/conf/broker.xml to your command
-    
-    e.g. $ bin/activemq console xbean:examples/conf/broker.xml
- -->
 <beans
         xmlns="http://www.springframework.org/schema/beans"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -61,17 +45,8 @@
                     <authorizationMap>
                         <authorizationEntries>
                             <authorizationEntry queue=">" read="admins" write="admins" admin="admins"/>
-                            <authorizationEntry queue="USERS.>" read="users" write="users" admin="users"/>
-                            <authorizationEntry queue="GUEST.>" read="guests" write="guests,users"
+                            <authorizationEntry queue="test.queue.security" read="guests" write="guests,users"
                                                 admin="guests,users"/>
-
-                            <authorizationEntry queue="TEST.Q" read="guests" write="guests"/>
-
-                            <authorizationEntry topic=">" read="admins" write="admins" admin="admins"/>
-                            <authorizationEntry topic="USERS.>" read="users" write="users" admin="users"/>
-                            <authorizationEntry topic="GUEST.>" read="guests" write="guests,users"
-                                                admin="guests,users"/>
-
                             <authorizationEntry topic="ActiveMQ.Advisory.>" read="guests,users" write="guests,users"
                                                 admin="guests,users"/>
                         </authorizationEntries>
@@ -91,9 +66,4 @@
         </shutdownHooks>
 
     </broker>
-
-    <!-- Use Web applications and Camel in secured broker environment
-    <import resource="jetty.xml"/>
-      -->
-
 </beans>
