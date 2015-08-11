@@ -37,6 +37,10 @@
                                     <name>org.apache.activemq.default.directory.prefix</name>
                                     <value>./target/</value>
                                 </property>
+                                <property>
+                                    <name>log4j.configuration</name>
+                                    <value>file:target/classes/log4j.properties</value>
+                                </property>
                             </systemProperties>
                         </configuration>
                         <dependencies>
@@ -44,6 +48,16 @@
                                 <groupId>org.springframework</groupId>
                                 <artifactId>spring-context</artifactId>
                                 <version>${spring.version}</version>
+                            </dependency>
+                            <dependency>
+                                <groupId>org.slf4j</groupId>
+                                <artifactId>slf4j-log4j12</artifactId>
+                                <version>1.7.7</version>
+                            </dependency>
+                            <dependency>
+                                <groupId>log4j</groupId>
+                                <artifactId>log4j</artifactId>
+                                <version>1.2.16</version>
                             </dependency>
                         </dependencies>
                     </plugin>
