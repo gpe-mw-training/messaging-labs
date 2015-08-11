@@ -120,7 +120,7 @@
                                     <goal>java</goal>
                                 </goals>
                                 <configuration>
-                                    <mainClass>com.redhat.gpe.training.messaging.jmx.SimpleProducer</mainClass>
+                                    <mainClass>com.redhat.gpe.training.messaging.jmx.JMXClient</mainClass>
                                 </configuration>
                             </execution>
                         </executions>
