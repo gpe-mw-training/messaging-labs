@@ -10,7 +10,7 @@
     <feature name="service" version="${pom.version}">
         <bundle>mvn:${pom.groupId}/service/${pom.version}</bundle>
         <configfile finalname="/etc/poolconfig.cfg" override="false">
-            mvn:com.fusesource.activemq.exercises/features/0.1-SNAPSHOT/cfg/features
+            mvn:com.redhat.gpe.training/features/0.1-SNAPSHOT/cfg/features
         </configfile>
     </feature>
 

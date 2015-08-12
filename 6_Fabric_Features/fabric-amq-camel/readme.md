@@ -18,7 +18,7 @@ mvn install
 - Install te features file into JBoss AMQ
 
 ````
-features:addurl mvn:com.fusesource.activemq.exercises/features/0.1-SNAPSHOT/xml/features
+features:addurl mvn:com.redhat.gpe.training/features/0.1-SNAPSHOT/xml/features
 ````
 - Deploy the project
 
@@ -34,7 +34,7 @@ OR
 
 ````
 ,\
-mvn:com.fusesource.activemq.exercises/features/0.1-SNAPSHOT/xml/features
+mvn:com.redhat.gpe.training/features/0.1-SNAPSHOT/xml/features
 ````
 
 - Next, boot Karaf, clean the previous installation & deploy the features
