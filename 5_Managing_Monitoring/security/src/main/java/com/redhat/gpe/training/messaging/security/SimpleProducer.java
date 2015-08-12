@@ -44,7 +44,8 @@ public class SimpleProducer {
             ConnectionFactory factory = (ConnectionFactory) context.lookup(CONNECTION_FACTORY_NAME);
             Destination destination = (Destination) context.lookup(DESTINATION_NAME);
 
-            connection = factory.createConnection("system", "manager");
+            //connection = factory.createConnection("system", "manager");
+            connection = factory.createConnection("guest", "password");
             connection.start();
 
             Session session = connection.createSession(NON_TRANSACTED, Session.AUTO_ACKNOWLEDGE);
