@@ -11,6 +11,12 @@
             useJmx="true"
             useShutdownHook="true">
 
+<!--        <plugins>
+            <loggingBrokerPlugin logAll="false"
+                                 logProducerEvents="false"
+                                 logConsumerEvents="false"/>
+        </plugins>-->
+
         <persistenceAdapter>
             <kahaDB directory="./target/activemq-data/kahadb"/>
         </persistenceAdapter>
