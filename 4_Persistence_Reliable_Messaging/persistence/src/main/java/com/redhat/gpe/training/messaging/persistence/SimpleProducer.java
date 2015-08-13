@@ -32,7 +32,7 @@ public class SimpleProducer {
             DESTINATION_NAME =
 				System.getProperty("Destination", "queue/simple");
 
-            String uri = "failover:(tcp://localhost:61616,tcp://localhost:62616)";
+            String uri = "tcp://localhost:61616";
             
             // JNDI lookup of JMS Connection Factory and JMS Destination
             Properties props = new Properties();
@@ -53,7 +53,8 @@ public class SimpleProducer {
             LOG.info("Successfully connected to: " + uri);
             
             producer.setTimeToLive(MESSAGE_TIME_TO_LIVE_MILLISECONDS);
-
+            //producer.setDeliveryMode(DeliveryMode.NON_PERSISTENT);
+            
             for (int i = 1; i <= NUM_MESSAGES_TO_BE_SENT; i++) {
                 TextMessage message = session.createTextMessage(i + ". message sent");
                 LOG.info("Sending to destination: " + destination.toString() + " this text: '" + message.getText());
