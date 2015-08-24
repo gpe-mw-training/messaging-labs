@@ -45,8 +45,8 @@
                     <authorizationMap>
                         <authorizationEntries>
                             <authorizationEntry queue=">" read="admins" write="admins" admin="admins"/>
-                            <authorizationEntry queue="test.queue.security" read="guests" write="guests,users"
-                                                admin="guests,users"/>
+                            <authorizationEntry queue="test.queue.security" read="guests" write="users"
+                                                admin="users"/>
                             <authorizationEntry topic="ActiveMQ.Advisory.>" read="guests,users" write="guests,users"
                                                 admin="guests,users"/>
                         </authorizationEntries>

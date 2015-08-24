@@ -20,7 +20,7 @@ public class SimpleConsumer {
         Connection connection = null;
 
         try {
-            String uri = "failover:(tcp://localhost:61616,tcp://localhost:62616)";
+            String uri = "tcp://localhost:61616";
 
             // JNDI lookup of JMS Connection Factory and JMS Destination
             Properties props = new Properties();
