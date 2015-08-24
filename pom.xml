@@ -65,7 +65,6 @@
         <module>3_JMS_Enhancements</module>
         <module>4_Persistence_Reliable_Messaging</module>
         <module>5_Managing_Monitoring</module>
-        <module>6_Fabric_Features</module>
         <module>broker</module>
     </modules>
 
