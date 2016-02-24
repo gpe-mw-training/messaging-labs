@@ -22,16 +22,24 @@ import java.util.Properties;
 
 public class JMXClient {
     private static final Logger LOG = LoggerFactory.getLogger(JMXClient.class);
-
-    private static String JMX_URI = "service:jmx:rmi:///jndi/rmi://localhost:1099/karaf-root";
     private static String QUEUE_TEST = "TEST.QUEUE";
+    private static String JMX_PROPERTIES_FILE="management.properties";
     
     public static void main(String args[]) {
+    	
+    	Properties props = new Properties();
+        try {
+            props.load(JMXClient.class.getClassLoader().getResourceAsStream(JMX_PROPERTIES_FILE));
+ 
+        } catch (IOException ioe) {
+            throw new RuntimeException(ioe);
+        }
+
         JMXServiceURL url = null;
         try {
-            url = new JMXServiceURL(JMX_URI);
+            url = new JMXServiceURL(props.getProperty("jmx_uri"));
             Map<String, Object> env = new HashMap<String, Object>();
-            env.put(JMXConnector.CREDENTIALS, new String[]{"admin", "admin"});
+            env.put(JMXConnector.CREDENTIALS, new String[]{props.getProperty("jmx_userid"), props.getProperty("jmx_password")});
             JMXConnector connector = JMXConnectorFactory.connect(url, env);
             connector.connect();
             

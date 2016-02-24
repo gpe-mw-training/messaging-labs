@@ -6,7 +6,6 @@ import org.slf4j.LoggerFactory;
 import javax.jms.*;
 import javax.naming.Context;
 import javax.naming.InitialContext;
-import java.util.*;
 
 public class SimpleConsumer {
     private static final Logger LOG = LoggerFactory.getLogger(SimpleConsumer.class);
@@ -20,15 +19,8 @@ public class SimpleConsumer {
         Connection connection = null;
 
         try {
-            String uri = "tcp://localhost:61616";
-
             // JNDI lookup of JMS Connection Factory and JMS Destination
-            Properties props = new Properties();
-            props.setProperty(Context.INITIAL_CONTEXT_FACTORY, "org.apache.activemq.jndi.ActiveMQInitialContextFactory");
-            props.setProperty(Context.PROVIDER_URL, uri);
-
-            Context context = new InitialContext(props);
-
+            Context context = new InitialContext();
             ConnectionFactory factory = (ConnectionFactory) context.lookup(CONNECTION_FACTORY_NAME);
             Destination destination = (Destination) context.lookup(DESTINATION_NAME);
 
