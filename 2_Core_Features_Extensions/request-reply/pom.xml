@@ -14,9 +14,9 @@
 
     <name>RedHat GPE Training :: Messaging :: Lab 2 :: Request Reply</name>
 	<properties>
-		<sslsample.keystore>src/main/resources/keystore.jks</sslsample.keystore>
+		<sslsample.keystore>${project.parent.parent.basedir}/certs/client.ks</sslsample.keystore>
 		<sslsample.keypasswd>password</sslsample.keypasswd>
-		<sslsample.truststore>src/main/resources/truststore.jks</sslsample.truststore>
+		<sslsample.truststore>${project.parent.parent.basedir}/certs/client.ts</sslsample.truststore>
 		<sslsample.truststorepasswd>password</sslsample.truststorepasswd>
 	</properties>
     <profiles>
