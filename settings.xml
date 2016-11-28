@@ -5,11 +5,11 @@
   <profiles>
     <!-- Profile with online repositories required by Fuse -->
     <profile>
-      <id>fuse-online-repos</id>
+      <id>amq-online-repos</id>
       <repositories>
         <repository>
           <id>jboss-ga-repository</id>
-          <url>http://maven.repository.redhat.com/techpreview/all</url>
+          <url>https://maven.repository.redhat.com/ga</url>
           <releases>
             <enabled>true</enabled>
           </releases>
@@ -19,7 +19,7 @@
         </repository>
         <repository>
           <id>jboss-public-repository</id>
-          <url>http://repository.jboss.org/nexus/content/repositories/public/</url>
+          <url>https://repository.jboss.org/nexus/content/repositories/public/</url>
           <releases>
             <enabled>true</enabled>
           </releases>
@@ -27,11 +27,25 @@
             <enabled>false</enabled>
           </snapshots>
         </repository>
+        <repository>
+            <id>jboss-fuse-repository</id>
+            <name>Red Hat JBoss Fuse repository (all)</name>
+            <url>https://repo.fusesource.com/nexus/content/groups/public/</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+                <updatePolicy>never</updatePolicy>
+            </snapshots>
+        </repository>
       </repositories>
       <pluginRepositories>
         <pluginRepository>
           <id>jboss-ga-plugin-repository</id>
-          <url>http://maven.repository.redhat.com/techpreview/all</url>
+          <url>https://maven.repository.redhat.com/ga</url>
           <releases>
             <enabled>true</enabled>
           </releases>
@@ -41,7 +55,7 @@
         </pluginRepository>
         <pluginRepository>
           <id>jboss-public-plugin-repository</id>
-          <url>http://repository.jboss.org/nexus/content/repositories/public/</url>
+          <url>https://repository.jboss.org/nexus/content/repositories/public/</url>
           <releases>
             <enabled>true</enabled>
           </releases>
@@ -49,13 +63,27 @@
             <enabled>false</enabled>
           </snapshots>
         </pluginRepository>
+        <pluginRepository>
+            <id>jboss-fuse-plugin-repository</id>
+            <name>Red Hat JBoss Fuse Plugin repository (all)</name>
+            <url>https://repo.fusesource.com/nexus/content/groups/public/</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+                <updatePolicy>never</updatePolicy>
+            </snapshots>
+        </pluginRepository>
       </pluginRepositories>
     </profile>
   </profiles>
 
   <activeProfiles>
     <!-- Activation of the Fuse profile -->
-    <activeProfile>fuse-online-repos</activeProfile>
+    <activeProfile>amq-online-repos</activeProfile>
   </activeProfiles>
 
 </settings>
