@@ -24,7 +24,7 @@ public class SimpleConsumer {
             ConnectionFactory factory = (ConnectionFactory) context.lookup(CONNECTION_FACTORY_NAME);
             Destination destination = (Destination) context.lookup(DESTINATION_NAME);
 
-            connection = factory.createConnection("admin", "admin");
+            connection = factory.createConnection("sjayanti-redhat.com", "redhat");
             connection.start();
 
             Session session = connection.createSession(NON_TRANSACTED, Session.AUTO_ACKNOWLEDGE);

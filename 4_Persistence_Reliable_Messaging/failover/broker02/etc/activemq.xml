@@ -45,7 +45,7 @@
         </managementContext>
 
         <persistenceAdapter>
-            <kahaDB directory="../shared-broker-data/kahadb"/>
+            <kahaDB directory="../broker2-data/kahadb"/>
         </persistenceAdapter>
 
 <!--        <plugins>

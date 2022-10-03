@@ -6,7 +6,6 @@ import org.slf4j.Logger;
 import javax.jms.*;
 import javax.naming.Context;
 import javax.naming.InitialContext;
-import java.util.Properties;
 
 public class SimpleProducer {
     private static final Logger LOG = LoggerFactory.getLogger(SimpleProducer.class);
@@ -32,26 +31,18 @@ public class SimpleProducer {
             DESTINATION_NAME =
 				System.getProperty("Destination", "queue/simple");
 
-            String uri = "tcp://localhost:61616";
             
             // JNDI lookup of JMS Connection Factory and JMS Destination
-            Properties props = new Properties();
-            props.setProperty(Context.INITIAL_CONTEXT_FACTORY,"org.apache.activemq.jndi.ActiveMQInitialContextFactory");
-            props.setProperty(Context.PROVIDER_URL, uri);
-            
-            Context context = new InitialContext(props);
-            
+            Context context = new InitialContext();
             ConnectionFactory factory = (ConnectionFactory) context.lookup(CONNECTION_FACTORY_NAME);
-            Destination destination = (Destination) context.lookup(DESTINATION_NAME);
+            Destination destination = (Destination) context.lookup(DESTINATION_NAME);           
 
             connection = factory.createConnection("admin", "admin");
             connection.start();
 
             Session session = connection.createSession(NON_TRANSACTED, Session.AUTO_ACKNOWLEDGE);
             MessageProducer producer = session.createProducer(destination);
- 
-            LOG.info("Successfully connected to: " + uri);
-            
+             
             producer.setTimeToLive(MESSAGE_TIME_TO_LIVE_MILLISECONDS);
             //producer.setDeliveryMode(DeliveryMode.NON_PERSISTENT);
             

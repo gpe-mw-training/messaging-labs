@@ -13,7 +13,12 @@
     <packaging>jar</packaging>
 
     <name>RedHat GPE Training :: Messaging :: Lab 2 :: Multiple Consumer Handling</name>
-
+	<properties>
+		<sslsample.keystore>${project.parent.parent.basedir}/certs/client.ks</sslsample.keystore>
+		<sslsample.keypasswd>password</sslsample.keypasswd>
+		<sslsample.truststore>${project.parent.parent.basedir}/certs/client.ts</sslsample.truststore>
+		<sslsample.truststorepasswd>password</sslsample.truststorepasswd>
+	</properties>
     <profiles>
         <profile>
             <id>consumer</id>
@@ -32,6 +37,24 @@
                                 <configuration>
                                     <mainClass>com.redhat.gpe.training.messaging.multipleconsumers.SimpleConsumer
                                     </mainClass>
+									<systemProperties>
+										<systemProperty>
+											<key>javax.net.ssl.keyStore</key>
+											<value>${sslsample.keystore}</value>
+										</systemProperty>
+										<systemProperty>
+											<key>javax.net.ssl.keyStorePassword</key>
+											<value>${sslsample.keypasswd}</value>
+										</systemProperty>
+										<systemProperty>
+											<key>javax.net.ssl.trustStore</key>
+											<value>${sslsample.truststore}</value>
+										</systemProperty>
+										<systemProperty>
+											<key>javax.net.ssl.trustStorePassword</key>
+											<value>${sslsample.truststorepasswd}</value>
+										</systemProperty>
+									</systemProperties>
                                 </configuration>
                             </execution>
                         </executions>
@@ -57,6 +80,24 @@
                                 <configuration>
                                     <mainClass>com.redhat.gpe.training.messaging.multipleconsumers.SimpleProducer
                                     </mainClass>
+									<systemProperties>
+										<systemProperty>
+											<key>javax.net.ssl.keyStore</key>
+											<value>${sslsample.keystore}</value>
+										</systemProperty>
+										<systemProperty>
+											<key>javax.net.ssl.keyStorePassword</key>
+											<value>${sslsample.keypasswd}</value>
+										</systemProperty>
+										<systemProperty>
+											<key>javax.net.ssl.trustStore</key>
+											<value>${sslsample.truststore}</value>
+										</systemProperty>
+										<systemProperty>
+											<key>javax.net.ssl.trustStorePassword</key>
+											<value>${sslsample.truststorepasswd}</value>
+										</systemProperty>
+									</systemProperties>                                    
                                 </configuration>
                             </execution>
                         </executions>

@@ -6,4 +6,6 @@ rm -f broker01/lock
 rm -fr broker02/data
 rm -f broker02/lock
 
-rm -fr shared-broker-data/kahadb
+rm -fr broker1-data/kahadb
+rm -fr broker2-data/kahadb
+

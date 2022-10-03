@@ -13,6 +13,13 @@
     <packaging>jar</packaging>
 
     <name>RedHat GPE Training :: Messaging :: Lab 1 :: Simple Queue</name>
+    <properties>
+    
+		<sslsample.keystore>${project.parent.parent.basedir}/certs/client.ks</sslsample.keystore>
+		<sslsample.keypasswd>password</sslsample.keypasswd>
+		<sslsample.truststore>${project.parent.parent.basedir}/certs/client.ts</sslsample.truststore>
+		<sslsample.truststorepasswd>password</sslsample.truststorepasswd>
+	</properties>
 
     <profiles>
         <profile>
@@ -31,6 +38,24 @@
                                 </goals>
                                 <configuration>
                                     <mainClass>com.redhat.gpe.training.messaging.queue.SimpleConsumer</mainClass>
+									<systemProperties>								
+										<systemProperty>
+											<key>javax.net.ssl.keyStore</key>
+											<value>${sslsample.keystore}</value>
+										</systemProperty>
+										<systemProperty>
+											<key>javax.net.ssl.keyStorePassword</key>
+											<value>${sslsample.keypasswd}</value>
+										</systemProperty>
+										<systemProperty>
+											<key>javax.net.ssl.trustStore</key>
+											<value>${sslsample.truststore}</value>
+										</systemProperty>
+										<systemProperty>
+											<key>javax.net.ssl.trustStorePassword</key>
+											<value>${sslsample.truststorepasswd}</value>
+										</systemProperty>
+									</systemProperties>
                                 </configuration>
                             </execution>
                         </executions>
@@ -55,6 +80,24 @@
                                 </goals>
                                 <configuration>
                                     <mainClass>com.redhat.gpe.training.messaging.queue.SimpleProducer</mainClass>
+									<systemProperties>
+										<systemProperty>
+											<key>javax.net.ssl.keyStore</key>
+											<value>${sslsample.keystore}</value>
+										</systemProperty>
+										<systemProperty>
+											<key>javax.net.ssl.keyStorePassword</key>
+											<value>${sslsample.keypasswd}</value>
+										</systemProperty>
+										<systemProperty>
+											<key>javax.net.ssl.trustStore</key>
+											<value>${sslsample.truststore}</value>
+										</systemProperty>
+										<systemProperty>
+											<key>javax.net.ssl.trustStorePassword</key>
+											<value>${sslsample.truststorepasswd}</value>
+										</systemProperty>
+									</systemProperties>
                                 </configuration>
                             </execution>
                         </executions>
